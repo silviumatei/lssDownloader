@@ -51,7 +51,9 @@ Open the lssDownloader.ipynb file.
 Locate the --- Configuration --- section and modify the following lines:
 
 LIMEQUERY_DOMAIN = "https://XXX.limequery.com/admin/authentication/sa/login"    # <--- REPLACE THIS with the exact URL to your LimeSurvey login page.
+
 LIMEQUERY_USERNAME = "XXX"  # <--- REPLACE THIS with your LimeSurvey administrator username.
+
 LIMEQUERY_PASSWORD = "XXX"  # <--- REPLACE THIS with your LimeSurvey administrator password.
 
 Security Note: For production environments or enhanced security, consider loading these credentials from environment variables or a secure configuration system instead of hardcoding them directly in the script.
@@ -92,3 +94,59 @@ Selector Changes: Web applications can change their HTML structure (CSS selector
 Download Prompts: While the script attempts to configure Chrome to automatically download files, browser security settings or specific LimeSurvey configurations might still trigger a download prompt in some cases. You may need to manually confirm the download if this occurs.
 
 Login Issues: If the script reports "Login failed: Invalid username or password," double-check your LIMEQUERY_USERNAME and LIMEQUERY_PASSWORD in the script.
+
+# The code will log each operation, see below a sample output:
+
+Starting LimeSurvey LSS download for domain: https://XXX.limequery.com/admin/authentication/sa/login
+
+Initializing Chrome WebDriver (automatic management via selenium-manager)...
+
+Navigating to login page: https://XXX.limequery.com/admin/authentication/sa/login
+
+Entering username and password...
+
+Clicking login button...
+
+Waiting for dashboard to load...
+
+Timeout waiting for dashboard URL. Checking for error messages or other indicators.
+
+Could not verify dashboard load. Proceeding with caution.
+
+Checking for feature preview modal...
+
+Feature preview modal found. Attempting to close it.
+
+Found close button using specific XPath.
+
+Feature preview modal closed.
+
+Setting surveys per page to 100...
+
+Surveys per page set to 100.
+
+Selecting all surveys on the current page...
+
+All surveys selected.
+
+Scrolling to the bottom of the page...
+
+Opening survey actions dropdown (updated selector)...
+
+Actions dropdown opened.
+
+Selecting 'Export survey structure (*.lss)' from dropdown...
+
+Export survey structure option clicked.
+
+Waiting for first export modal and clicking Export button...
+
+Clicked Export button in the first modal.
+
+Waiting for second download modal and clicking download link...
+
+Clicked 'Download archive' link. Download should start.
+
+Download process initiated. Files should be in: D:\Projects\Lime\lss_downloads
+
+Closing browser...
