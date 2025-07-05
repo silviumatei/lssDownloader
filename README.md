@@ -1,4 +1,4 @@
-# LimeSurvey LSS File Scraper
+# LimeSurvey LSS File Downloader
 This Python script automates the process of logging into a LimeSurvey administration panel and downloading all survey structures as .lss files. It's designed to help you back up or migrate your survey designs efficiently.
 
 Features
